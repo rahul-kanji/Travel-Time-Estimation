@@ -5,6 +5,8 @@ import folium
 from streamlit_folium import st_folium
 from datetime import datetime, time, date, timedelta
 from streamlit_searchbox import st_searchbox
+from dotenv import load_dotenv
+import os
 
 def get_location_suggestions(query, api_key):
     if not query:
@@ -112,8 +114,12 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# API key (replace with your own TomTom API key)
-api_key = "nAHjNV9G82JXoj7oO4dDsvWjNL7Q87hV"
+
+load_dotenv()  # Load variables from the .env file
+
+api_key = os.getenv('tomtom_API_KEY')  # Fetches the value from .env
+if not api_key:
+    raise ValueError("API key is not set in .env file")
 
 st.image("C:/Users/RahulKanji/Downloads/WAL Logo.png", use_column_width=True)
 st.title('Travel Time Estimator',)
