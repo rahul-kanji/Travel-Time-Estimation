@@ -121,7 +121,7 @@ api_key = os.getenv('tomtom_API_KEY')  # Fetches the value from .env
 if not api_key:
     raise ValueError("API key is not set in .env file")
 
-st.image("C:/Users/RahulKanji/Downloads/WAL Logo.png", use_column_width=True)
+st.image("C:/Users/RahulKanji/Downloads/WAL Logo.png", use_container_width=True)
 st.title('Travel Time Estimator',)
 
 if "route_data" not in st.session_state:
