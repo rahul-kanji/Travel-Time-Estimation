@@ -115,12 +115,6 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 
-# load_dotenv()  # Load variables from the .env file
-
-# api_key = os.getenv('tomtom_API_KEY')  # Fetches the value from .env
-# if not api_key:
-#     raise ValueError("API key is not set in .env file")
-
 def main_app():
     api_key=st.session_state.API_KEY
     st.image("./WAL_Logo.png", use_container_width=True)
