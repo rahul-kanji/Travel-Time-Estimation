@@ -356,7 +356,7 @@ def main_app():
 
 def validate_api_key(api_key):
     # Replace this with a real API endpoint that requires authentication
-    url = f"https://api.tomtom.com/routing/1/calculateRoute/{-36.40000,174.36000}:{-36.3967,174.37000}/json"
+    url = f"https://api.tomtom.com/routing/1/calculateRoute/-36.40000,174.36000:-36.3967,174.37000/json"
     params = {
         "travelMode": 'car',  # Updated to use travelMode
         "traffic": "true",
@@ -385,7 +385,7 @@ def input_api_key():
     if st.button("Submit"):
         if api_key:
             # Store the API key in session state
-            
+
             api_key_validity = validate_api_key(api_key)
             if api_key_validity:
                 st.session_state.API_KEY = api_key
